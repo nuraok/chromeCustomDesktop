@@ -1,0 +1,252 @@
+body{
+	display: flex;
+	justify-content: center;
+	aling-items: center;
+	padding: 0px 200px;
+}
+
+/* 
+==========================================================================
+   CONFIGURAÇÕES DO CONTÊINER (#linkblocks)
+   ========================================================================== */
+#linkblocks {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-around!important;
+    align-items: center !important;
+    align-content: stretch !important;
+				
+		grid-column: 1 !important;
+	  grid-row: 3 / span 2 !important;
+		border-radius: 1em;
+    background-color: #00000000;
+    border: 1px solid rgb(0 0 0 / 7%);
+		backdrop-filter: blur(2em);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E") !important;
+		box-shadow: rgb(0 0 0 / 0.24) 0px 3px 8px;
+		
+	
+}
+
+/* ==========================================================================
+   GRUPOS DE LINKS (.link-group)
+   ========================================================================== */
+#linkblocks > div.link-group {
+    height: 330px !important;
+}
+
+.link-group {
+    width: fit-content !important;
+}
+
+/* ==========================================================================
+   LISTAS E GRID DE ÍCONES (ul / .link-list)
+   ========================================================================== */
+#linkblocks > div.link-group > ul {
+    max-width: none !important;
+  
+    padding: 10px 15px !important;
+		overflow-y: auto;
+		scrollbar-width: none;
+		border-radius: 1em;
+    background-color: #00000000;
+    border: 1px solid rgb(0 0 0 / 7%);
+		backdrop-filter: blur(2em);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E") !important;
+		box-shadow: rgb(0 0 0 / 0.24) 0px 3px 8px;
+}
+  
+.link-list {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; 
+		gap: 30px 60px
+}
+
+.titles .link-list {
+    
+}
+#linkblocks > div.link-group::-webkit-scrollbar {
+    display: none !important; /* Desativa a renderização visual da barra */
+}
+.link .link-elem-title {
+    display: none;
+    width: fit-content;
+    padding-top: 0.4em;
+    line-height: 1.2em;
+    max-height: 3.6em;
+    word-wrap: break-word;
+    text-align: center;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+main{
+	display: grid !important;
+	grid-template-columns: repeat(2, 1fr) !important;
+	grid-template-rows: 2fr 1fr 2fr 2fr !important;
+}
+#time {
+ grid-column: span 2 / span 2;
+
+}
+#main{
+	grid-column: 1 / span 2 !important;
+	grid-row: 2 !important;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	align-content: center;
+}
+
+#greetings{
+	height: 50px !important;
+	align-content: center;
+	background-color: #00000089;
+	border-radius: 1em;
+  border: 1px solid rgb(0 0 0 / 7%);
+  backdrop-filter: blur(9em);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E") !important;
+		box-shadow: rgb(0 0 0 / 0.24) 0px 3px 8px;
+}
+
+
+
+#sb_container > *{
+	max-width: none !important;
+	min-width: 100% !important;
+	height: 100px;
+}
+#show-settings {
+    position: fixed;
+    top: 0;
+		height: fit-content;
+    right: 0;
+    padding-right: 20px;
+    padding-top: 20px;
+    z-index: 4;
+    transition: opacity 0.1s var(--out-cubic);
+}
+#show-settings:after {
+    content: "";
+    position: absolute;
+    display: block;
+    opacity: 0;
+    width: 7px;
+    height: 7px;
+    left: -2px;
+    top: 18px;
+    background-color: rgb(30 161 255);
+    border-radius: 100%;
+    z-index: 10;
+    transition: opacity 0.3s;
+    border: 1px solid #79bcff;
+}
+#interface {
+	  margin: 0;
+    position: relative;
+    display: grid;
+    width: 100%;
+		height: 911px;
+    gap: 20px;
+    box-sizing: border-box;
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+    text-shadow: var(--text-shadow-interface);
+    grid-template-areas: var(--grid);
+    transition: opacity var(--load-time-transition), transform 0.33s;
+		max-width: none !important;
+		align-content: space-between;
+}
+#searchbar-wrapper {
+	
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 1em;
+    background-color: #00000000;
+    border: 1px solid rgb(0 0 0 / 7%);
+    backdrop-filter: blur(9em);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E") !important;
+		box-shadow: rgb(0 0 0 / 0.24) 0px 3px 8px;
+}
+
+#sb_container {
+    position: unset;
+    display: flex;
+		flex-direction: column;
+    visibility: visible;
+    align-items: center;
+    padding: 0;
+		height: 100%;
+    min-width: 100%;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 0%) 0px 3px 8px;
+		grid-column: 2 !important;
+	  grid-row: 3 / span 2 !important;
+			
+		 place-self: start center !important;
+			gap: 10px;
+}
+
+#time {
+	font-size: 20px;
+}
+
+#sb-suggestions {
+    position: unset;
+    display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+    padding: 0.6em;
+    font-size: 1.3em;
+    text-shadow: none;
+    border-radius: 1em;
+    box-sizing: border-box;
+    backdrop-filter: blur(2em);
+    -webkit-backdrop-filter: blur(2em);
+    box-shadow: rgb(0 0 0 / 0.24) 0px 3px 8px;
+    border: 1px solid #fff1;
+    background-color: var(--searchbar-background);
+    z-index: 4;
+    color: rgb(var(--font-on-blur-color));
+		justify-content: space-around;
+		overflow-y: scroll;
+		scrollbar-width: none;
+		margin: 0;
+		
+}
+#sb-suggestions > li {
+	height: fit-content;
+	margin: 5px 0px;
+	font-size: 15px;
+	
+	
+	
+	
+}
+#sb-suggestions > li > div {
+	display: flex;
+	flex-direction: column;
+	gap: 10px
+	overflox: none !important;
+
+}
+
+#sb-suggestions li {
+  overflow-y: hidden;
+}
+
+
+
+
+
+
+
+
+
